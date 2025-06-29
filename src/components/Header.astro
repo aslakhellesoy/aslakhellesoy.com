@@ -4,6 +4,7 @@ import IconX from "@/assets/icons/IconX.svg";
 import IconMoon from "@/assets/icons/IconMoon.svg";
 import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconArchive from "@/assets/icons/IconArchive.svg";
+import IconRss from "@/assets/icons/IconRss.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
 import LinkButton from "./LinkButton.astro";
@@ -116,6 +117,22 @@ const isActive = (path: string) => {
               <IconSearch />
               <span class="sr-only">Search</span>
             </LinkButton>
+          </li>
+          <li class="col-span-1 flex items-center justify-center">
+            <a
+              target="_blank"
+              href="/rss.xml"
+              class="inline-block"
+              aria-label="rss feed"
+              title="RSS Feed"
+            >
+              <IconRss
+                width={20}
+                height={20}
+                class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
+              />
+              <span class="sr-only">RSS Feed</span>
+            </a>
           </li>
           {
             SITE.lightAndDarkMode && (

@@ -1,0 +1,15 @@
+---
+import LinkButton from "./LinkButton.astro";
+
+export interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<LinkButton
+  {href}
+  class="underline decoration-dashed underline-offset-4 hover:text-accent"
+  ><slot /></LinkButton
+>
