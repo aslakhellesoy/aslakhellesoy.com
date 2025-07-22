@@ -6,10 +6,11 @@ export interface Props {
 }
 
 const { href } = Astro.props;
+//     class="inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
 ---
 
 <LinkButton
   {href}
-  class="underline decoration-dashed underline-offset-4 hover:text-accent"
+  class="text-accent decoration-2 underline-offset-4 hover:underline focus-visible:no-underline focus-visible:underline-offset-0"
   ><slot /></LinkButton
 >

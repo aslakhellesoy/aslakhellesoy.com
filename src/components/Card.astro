@@ -3,6 +3,7 @@ import { slugifyStr } from "@/utils/slugify";
 import type { CollectionEntry } from "astro:content";
 import { getPath } from "@/utils/getPath";
 import Datetime from "./Datetime.astro";
+import Link from "./Link.astro";
 
 export interface Props extends CollectionEntry<"blog"> {
   variant?: "h2" | "h3";
@@ -19,10 +20,7 @@ const headerProps = {
 ---
 
 <li class="my-6">
-  <a
-    href={getPath(id, filePath)}
-    class="inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
-  >
+  <Link href={getPath(id, filePath)}>
     {
       variant === "h2" ? (
         <h2 {...headerProps}>{title}</h2>
@@ -30,7 +28,7 @@ const headerProps = {
         <h3 {...headerProps}>{title}</h3>
       )
     }
-  </a>
+  </Link>
   <Datetime {pubDatetime} {modDatetime} {timezone} />
   <p>{description}</p>
 </li>
