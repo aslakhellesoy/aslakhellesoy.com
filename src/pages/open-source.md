@@ -35,7 +35,10 @@ Cucumber eventually grew into a [company](/entrepreneurship) I co-founded, and i
 
 I created [EventSource](https://www.npmjs.com/package/eventsource) - an implementation of the [W3C](https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface) standard for Node.js in 2012.
 
-As of 2025 this library is downloaded [11M each week](https://www.npmjs.com/package/eventsource) and has seen a recent rise in popularity because LLM APIs use the EventSource standard,
+As of 2025 this library is downloaded [11M each week](https://www.npmjs.com/package/eventsource) 
+and has seen a recent rise in popularity because LLM APIs use the EventSource standard.
+
+The EventSource library is used in the [Typescript SDK for Model Context Protocol](https://github.com/modelcontextprotocol/typescript-sdk/)
 
 ## Webbit - 2012-2016
 
