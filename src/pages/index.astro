@@ -3,13 +3,11 @@ import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import Socials from "@/components/Socials.astro";
 import Card from "@/components/Card.astro";
 import Hr from "@/components/Hr.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
-import { SOCIALS } from "@/constants";
 
 const posts = await getCollection("blog");
 
@@ -23,7 +21,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <main id="main-content" data-layout="index">
     <section id="hero" class="pt-8 pb-6">
       <p>
-        Hi, I am <a href="/about">Aslak Hellesøy</a>, a software engineer.
+        Hi, I am <a href="/about" class="text-base">Aslak Hellesøy</a>, a
+        software engineer.
       </p>
     </section>
 
@@ -59,12 +58,16 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       )
     }
 
-    <div class="my-8 text-center">
-      <aButton href="/posts/">
-        All Posts
-        <IconArrowRight class="inline-block rtl:-rotate-180" />
-      </aButton>
-    </div>
+    {
+      SITE.showBlog && (
+        <div class="my-8 text-center">
+          <aButton href="/posts/">
+            All Posts
+            <IconArrowRight class="inline-block rtl:-rotate-180" />
+          </aButton>
+        </div>
+      )
+    }
   </main>
   <Footer />
 </Layout>
