@@ -4,14 +4,12 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
-import LinkButton from "@/components/LinkButton.astro";
 import Card from "@/components/Card.astro";
 import Hr from "@/components/Hr.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
-import Link from "@/components/Link.astro";
 
 const posts = await getCollection("blog");
 
@@ -25,36 +23,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <main id="main-content" data-layout="index">
     <section id="hero" class="pt-8 pb-6">
       <p>
-        I am a
-        <Link href="/software-engineer">software engineer</Link>,
-        <Link href="/entrepreneurship">entrepreneur</Link>,
-        <Link href="/business-analysis">business analyst</Link>,
-        <Link href="/open-source">open source contributor</Link>,
-        <Link href="/speaking">speaker</Link>, and <Link href="/books"
-          >published author</Link
-        >.
+        Hi, I am <a href="/about">Aslak Hellesøy</a>, a software engineer.
       </p>
-      <p class="mt-2">
-        I help teams solve complex problems with <em>simple</em> and <em
-          >maintainable</em
-        > software, often helpling them work <em>faster</em> without sacrificing
-        <em>quality</em>.
-      </p>
-      <p class="mt-2">
-        Read the blog posts or check
-        <Link href="https://github.com/satnaing/astro-paper#readme">
-          README
-        </Link> for more info.
-      </p>
-      {
-        // only display if at least one social link is enabled
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
     </section>
 
     <Hr />
@@ -90,10 +60,10 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     }
 
     <div class="my-8 text-center">
-      <LinkButton href="/posts/">
+      <aButton href="/posts/">
         All Posts
         <IconArrowRight class="inline-block rtl:-rotate-180" />
-      </LinkButton>
+      </aButton>
     </div>
   </main>
   <Footer />

@@ -1,9 +1,17 @@
 @plugin '@tailwindcss/typography';
 
 @layer base {
+  a {
+    @apply text-accent decoration-2 underline-offset-4 hover:underline focus-visible:no-underline focus-visible:underline-offset-0;
+  }
+
   /* ===== Override default Tailwind Typography styles ===== */
   .app-prose {
     @apply prose;
+
+    a {
+      @apply text-accent decoration-2 underline-offset-4 hover:underline focus-visible:no-underline focus-visible:underline-offset-0;
+    }
 
     h1,
     h2,

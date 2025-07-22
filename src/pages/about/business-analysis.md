@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/AboutLayout.astro
+layout: ../../layouts/AboutLayout.astro
 title: "Business Analysis"
 ---
 
@@ -15,10 +15,9 @@ Every organisation is different, and each of them have a different set of proble
 
 Still, I keep coming back to the same tools and techniques to discover and understand these problems. -Not only for myself, but for the whole organisation so they can prioritise better and communicate better with software teams and other stakeholders. These techniques are:
 
-* Event Storming
-* Impact Mapping
-* Wardley Mapping
-* Example Mapping
-* User Story Mapping
-* Living Documentaion
-
+- Event Storming
+- Impact Mapping
+- Wardley Mapping
+- Example Mapping
+- User Story Mapping
+- Living Documentaion
