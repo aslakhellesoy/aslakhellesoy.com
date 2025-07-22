@@ -26,6 +26,9 @@ html[data-theme="dark"] {
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-border: var(--border);
+
+  --font-serif:
+    "Merriweather", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 @layer base {

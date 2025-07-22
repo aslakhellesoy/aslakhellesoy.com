@@ -2,7 +2,7 @@
 
 @layer base {
   a {
-    @apply text-accent decoration-2 underline-offset-4 hover:underline focus-visible:no-underline focus-visible:underline-offset-0;
+    @apply text-accent no-underline decoration-2 underline-offset-4 hover:underline focus-visible:no-underline focus-visible:underline-offset-0;
   }
 
   /* ===== Override default Tailwind Typography styles ===== */
@@ -10,7 +10,7 @@
     @apply prose;
 
     a {
-      @apply text-accent decoration-2 underline-offset-4 hover:underline focus-visible:no-underline focus-visible:underline-offset-0;
+      @apply text-accent no-underline decoration-2 underline-offset-4 hover:underline focus-visible:no-underline focus-visible:underline-offset-0;
     }
 
     h1,

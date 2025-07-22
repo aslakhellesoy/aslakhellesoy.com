@@ -59,6 +59,12 @@ const structuredData = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- General Meta Tags -->
     <title>{title}</title>
@@ -132,7 +138,7 @@ const structuredData = {
 
     <script is:inline src="/toggle-theme.js"></script>
   </head>
-  <body>
+  <body class="font-serif">
     <slot />
   </body>
 </html>
