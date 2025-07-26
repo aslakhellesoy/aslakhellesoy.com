@@ -1,9 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import Main from "@/layouts/Main.astro";
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
+import BlogLayout from "@/layouts/BlogLayout.astro";
 import Card from "@/components/Card.astro";
 import getPostsByGroupCondition from "@/utils/getPostsByGroupCondition";
 import { SITE } from "@/config";
@@ -31,9 +28,7 @@ const months = [
 ];
 ---
 
-<Layout title={`Archives | ${SITE.title}`}>
-  <Header />
-  <Main pageTitle="Archives" pageDesc="All the articles I've archived.">
+<BlogLayout title={`Archives | ${SITE.title}`} description="All the articles I've archived.">
     {
       Object.entries(
         getPostsByGroupCondition(posts, post =>
@@ -78,6 +73,4 @@ const months = [
           </div>
         ))
     }
-  </Main>
-  <Footer />
-</Layout>
+</BlogLayout>

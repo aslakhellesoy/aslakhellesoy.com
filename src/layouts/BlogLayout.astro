@@ -1,0 +1,70 @@
+---
+import Layout from "./Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const { pathname } = Astro.url;
+
+// Remove trailing slash from current pathname if exists
+const currentPath =
+  pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
+
+const isActive = (path: string) => {
+  const currentPathArray = currentPath.split("/").filter(p => p.trim());
+  const pathArray = path.split("/").filter(p => p.trim());
+
+  return currentPath === path || currentPathArray[0] === pathArray[0];
+};
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main id="main-content" class="flex-1 px-4 py-8 max-w-4xl mx-auto w-full">
+    <h1 class="text-6xl md:text-7xl font-light mb-8">Blog</h1>
+    
+    <nav class="mb-6">
+      <div class="flex flex-wrap gap-6 text-lg mb-4">
+        <a 
+          href="/posts" 
+          class:list={["hover:underline", { "underline": isActive("/posts") }]}
+        >
+          Posts
+        </a>
+        <a 
+          href="/tags" 
+          class:list={["hover:underline", { "underline": isActive("/tags") }]}
+        >
+          Tags
+        </a>
+        <a 
+          href="/archives" 
+          class:list={["hover:underline", { "underline": isActive("/archives") }]}
+        >
+          Archives
+        </a>
+        <a 
+          href="/search" 
+          class:list={["hover:underline", { "underline": isActive("/search") }]}
+        >
+          Search
+        </a>
+      </div>
+      
+      <p class="text-base">
+        Subscribe <a href="/rss.xml" class="underline hover:no-underline">via RSS</a>
+      </p>
+    </nav>
+    
+    <div class="blog-content">
+      <slot />
+    </div>
+  </main>
+  <Footer />
+</Layout>

@@ -1,83 +1,36 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import Card from "@/components/Card.astro";
-import Hr from "@/components/Hr.astro";
-import getSortedPosts from "@/utils/getSortedPosts";
-import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
-import { SITE } from "@/config";
-
-const posts = await getCollection("blog");
-
-const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 ---
 
 <Layout>
   <Header />
-  <main id="main-content" data-layout="index">
-    <section id="hero" class="pt-8 pb-6">
-      <p>
-        Hi, I am <a href="/about" class="text-base">Aslak Hellesøy</a>, a
-        software engineer.
-      </p>
-    </section>
+  <main
+    id="main-content"
+    data-layout="index"
+    class="flex flex-1 flex-col items-center justify-center px-4 text-center"
+  >
+    <div class="mx-auto max-w-4xl">
+      <h1
+        class="mb-8 text-6xl leading-tight font-light md:text-8xl lg:text-9xl"
+      >
+        Aslak
+      </h1>
+      <h2
+        class="mb-4 text-6xl leading-tight font-light md:text-8xl lg:text-9xl"
+      >
+        Hellesøy
+      </h2>
 
-    <Hr />
-
-    {
-      featuredPosts.length > 0 && (
-        <>
-          <section id="featured" class="pt-12 pb-6">
-            <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
-            <ul>
-              {featuredPosts.map(data => (
-                <Card variant="h3" {...data} />
-              ))}
-            </ul>
-          </section>
-          {recentPosts.length > 0 && <Hr />}
-        </>
-      )
-    }
-
-    {
-      recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
-          <ul>
-            {recentPosts.map(
-              (data, index) =>
-                index < SITE.postPerIndex && <Card variant="h3" {...data} />
-            )}
-          </ul>
-        </section>
-      )
-    }
-
-    {
-      SITE.showBlog && (
-        <div class="my-8 text-center">
-          <aButton href="/posts/">
-            All Posts
-            <IconArrowRight class="inline-block rtl:-rotate-180" />
-          </aButton>
-        </div>
-      )
-    }
+      <nav class="mb-2 flex flex-wrap justify-center gap-8 text-lg md:text-xl">
+        <a
+          href="/Aslak-Hellesoy-Resume.pdf"
+          target="_blank"
+          class="hover:underline">Résumé</a
+        >
+      </nav>
+    </div>
   </main>
   <Footer />
 </Layout>
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
-      ?.dataset?.layout;
-    if (indexLayout) {
-      sessionStorage.setItem("backUrl", "/");
-    }
-  });
-</script>
