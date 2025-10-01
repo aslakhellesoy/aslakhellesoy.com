@@ -15,20 +15,23 @@ description: How concrete examples help LLMs write fewer defects
 
 Vibe coding is a hot topic. Even the [mainstream media](https://www.theguardian.com/technology/2025/mar/16/ai-software-coding-programmer-expertise-jobs-threat) is talking about it.
 
+> Everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it.
+
+I think most people are making a complete mess out of it. Code is churned out at an insane speed,
+but that isn't productive.
+
+> Measuring software productivity by lines of code is like measuring progress on an airplane by how much it weighs. --Bill
+
 If you search for "vibe coding" on [YouTube](https://www.youtube.com/results?search_query=vibe+coding) you'll find _thousands_ of videos.
 On [Hacker News](https://hn.algolia.com/?q=vibe+coding) there are _643_ stories.
 That's just 6 months after [Andrej Karpathy](https://x.com/karpathy/status/1886192184808149383) gave the practice a name.
 
-> Everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it.
+I've been working on how to remove ambiguity and misunderstandings from software requirements since 2005, and the techniques I have discovered and helped popularise are _very_ relevant to vibe coding.
 
-One of the reasons the web is so flooded with vibe coding advice is that we're all
-still trying to figure out how to make LLMs do _do the right thing_, and _do the thing right_.
-
-I started working on this problem in 2005, and I think it is _very_ relevant to vibe coding - I'me throwing my hat in the ring.
+I'm throwing my hat in the ring.
 
 ## Bugs love ambiguity
 
-I wasn't vibe coding 20 years ago, but that's when I first became interested in removing ambiguity and assumptions from software development.
 I'm sure you would agree with the following statement:
 
 > Ambiguous requirements breed assumptions, and assumptions breed bugs.
