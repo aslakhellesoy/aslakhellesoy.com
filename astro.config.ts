@@ -21,7 +21,7 @@ export default defineConfig({
   integrations: [sitemap({
     filter: page => SITE.showArchives || !page.endsWith("/archives"),
   }), d2({
-    skipGeneration: false,
+    skipGeneration: true,
     theme: {
       default: "102",
       dark: "102",
