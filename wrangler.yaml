@@ -1,0 +1,20 @@
+name = "aslakhellesoy-dot-com"
+main = ".svelte-kit/cloudflare/_worker.js"
+compatibility_date = "2025-11-06"
+compatibility_flags = [ "nodejs_compat" ]
+upload_source_maps = true
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+
+[observability]
+enabled = true
+
+[[routes]]
+pattern = "aslakhellesoy.com"
+custom_domain = true
+
+[[routes]]
+pattern = "oselvar.com"
+custom_domain = true
